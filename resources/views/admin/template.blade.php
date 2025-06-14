@@ -15,7 +15,9 @@
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark" style="background: var(--color-main);">
         <div class="container">
-            <a class="navbar-brand" href="javascript:void(0)">KUBISA.CO</a>
+            <a class="navbar-brand" href="{{ url('/') }}">
+                <img src="{{ asset('assets/icon.png') }}" alt="Cilok Cihaur" height="40"></a>
+            <a class="navbar-brand" href="javascript:void(0)">Cilok Cihaur</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
