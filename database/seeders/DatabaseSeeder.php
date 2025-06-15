@@ -96,7 +96,7 @@ class DatabaseSeeder extends Seeder
         Product::create([
             'id' => 3,
             'name' => 'Es teh manis',
-            'price' => 4000,
+            'price' => 100000,
             'descriptions' => 'lorem sajdhb jahhsdj jksahd',
             'image' => 'mouse.jpg',
             'categories_id' => 3,

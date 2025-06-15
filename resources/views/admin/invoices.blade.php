@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 @extends('admin.template')
+=======
+@extends('template')
+>>>>>>> e1ff6e8f490d6917a86d6e9fc25523bd23fcec56
 
 @section('title')
     Invoice Belanja
