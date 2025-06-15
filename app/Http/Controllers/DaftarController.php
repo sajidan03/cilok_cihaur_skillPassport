@@ -20,9 +20,9 @@ class DaftarController extends Controller
         User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => bcrypt($request->password),
             'level' => 'member'
         ]);
-        return redirect('/login')->with('messages', 'Pendaftaran berhasil! Silakan login.');
+        return redirect('/login')->with('messages-success', 'Pendaftaran berhasil! Silakan login.');
     }
 }

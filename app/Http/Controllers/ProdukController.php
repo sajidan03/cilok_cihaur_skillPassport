@@ -97,7 +97,6 @@ class ProdukController extends Controller
         $data['category'] = Category::all();
 
         return view('admin.product-edit', $data);
-
     }
 
     public function update(Request $request, String $id){

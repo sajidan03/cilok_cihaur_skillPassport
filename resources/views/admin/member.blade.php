@@ -32,8 +32,8 @@
                 <td>{{ $item->address }}</td>
                 <td><img src="{{ asset('storage/member/'.$item->foto) }}" alt="" style="width: 100px;height:100px"></td>
                 <td>
-                    <a href="" class="btn btn-sm  btn-info">Edit</a>
-                    <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Yakin dihapus?')">Hapus</a>
+                    <a href="{{ route('admin.member.edit', Crypt::encrypt($item->id) ) }}" class="btn btn-sm  btn-info">Edit</a>
+                    <a href="{{ route('admin.member.hapus', Crypt::encrypt($item->id) ) }}" class="btn btn-sm btn-danger" onclick="return confirm('Yakin dihapus?')">Hapus</a>
                 </td>
             </tr>
             @endforeach

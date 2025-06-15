@@ -45,6 +45,11 @@
             {{ session('messages') }}
         </div>
         @endif
+        @if(session('messages-success'))
+        <div class="alert alert-success">
+            {{ session('messages-success') }}
+        </div>
+        @endif
 
         <form action="/auth" method="POST">
             @csrf

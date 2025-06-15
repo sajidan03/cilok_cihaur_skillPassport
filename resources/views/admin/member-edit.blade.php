@@ -11,9 +11,9 @@
         </ul>
     </div>
     @endif
-    <form action="{{ route('member.update', Crypt::encrypt($member->id)) }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('admin.member.edit', Crypt::encrypt($member->id)) }}" method="post" enctype="multipart/form-data">
         @csrf
-        @method('PUT')
+        @method('POST')
         <div class="mb-3 mt-3">
             <label for="name" class="form-label">Name Member:</label>
             <input type="text" class="form-control" id="name" name="name" value="{{ $member->name }}" required>

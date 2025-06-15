@@ -55,6 +55,9 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/administrator/member', [AdminController::class, 'member'])->name('admin.member');
     Route::get('/administrator/member/create', [MemberController::class, 'create'])->name('admin.member.create');
     Route::post('/administrator/member/create', [MemberController::class, 'store'])->name('admin.member.store');
+    Route::get('/administrator/member/update/{id}', [MemberController::class, 'displayedit'])->name('admin.member.edit');
+    Route::post('/administrator/member/update/{id}', [MemberController::class, 'edit'])->name('admin.member.edit');
+    Route::post('/administrator/member/hapus/{id}', [MemberController::class, 'hapus'])->name('admin.member.hapus');
 
     Route::get('/administrator/invoices', [InvoiceController::class, 'index'])->name('admin.invoice.index');
     Route::post('/administrator/invoices/{id}', [InvoiceController::class, 'update'])->name('admin.invoice.update');
