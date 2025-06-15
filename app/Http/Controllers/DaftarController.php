@@ -17,15 +17,11 @@ class DaftarController extends Controller
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:6|confirmed'
         ]);
-
-        // Simpan ke database
         User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => $request->password
         ]);
-
-        // Redirect ke login dengan pesan sukses
         return redirect('/login')->with('messages', 'Pendaftaran berhasil! Silakan login.');
     }
 }
