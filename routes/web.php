@@ -27,6 +27,7 @@ Route::post('/administrator/auth', [UserController::class, 'auth'])->name('admin
 Route::post('/auth', [UserController::class, 'login'])->name('auth');
 Route::post('/daftar', [DaftarController::class, 'daftar'])->name('daftar');
 Route::get('/daftar', [DaftarController::class, 'display'])->name('daftar');
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
 Route::middleware(['member'])->group(function () {
     Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
@@ -37,7 +38,6 @@ Route::middleware(['member'])->group(function () {
     Route::get('/invoices', [InvoiceController::class, 'index'])->name('invoice.index');
     Route::get('/member/logout', [UserController::class, 'logoutMember'])->name('member.logout');
 });
-Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 Route::middleware(['admin'])->group(function () {
     Route::get('/administrator', [AdminController::class, 'index']);
     Route::get('/administrator/product', [AdminController::class, 'product']);

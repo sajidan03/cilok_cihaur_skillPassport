@@ -60,11 +60,7 @@
                 <button type="submit" class="btn btn-primary">Login</button>
             </div>
             <div class="text-center">
-<<<<<<< HEAD
                 <small class="text-muted">Belum punya akun? <a href="/daftar">Daftar sekarang</a></small>
-=======
-                <small class="text-muted">Belum punya akun? <a href="/register">Daftar sekarang</a></small>
->>>>>>> e1ff6e8f490d6917a86d6e9fc25523bd23fcec56
             </div>
         </form>
     </div>

@@ -10,7 +10,7 @@ class DaftarController extends Controller
     public function display(){
         return view('daftar');
     }
-    public function register(Request $request){
+    public function daftar(Request $request){
         
         $request->validate([
             'name' => 'required|string|max:255',
@@ -20,7 +20,8 @@ class DaftarController extends Controller
         User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->password
+            'password' => $request->password,
+            'level' => 'member'
         ]);
         return redirect('/login')->with('messages', 'Pendaftaran berhasil! Silakan login.');
     }
