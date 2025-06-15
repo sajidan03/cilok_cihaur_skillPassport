@@ -29,10 +29,10 @@
             <label for="address" class="form-label">Address:</label>
             <input type="text" class="form-control" id="address" placeholder="Enter Address" name="address" required>
         </div>
-        <div class="mb-3 mt-3">
+        {{-- <div class="mb-3 mt-3">
             <label for="foto" class="form-label">Foto Member:</label>
             <input type="file" class="form-control" id="foto"  name="foto">
-        </div>
+        </div> --}}
         <div class="mb-3 mt-3">
             <label for="passwprd" class="form-label">Password:</label>
             <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password" required>

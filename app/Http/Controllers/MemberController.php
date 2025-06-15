@@ -43,14 +43,12 @@ public function edit(Request $request, $id)
         'nohp' => 'required|max:13',
         'address' => 'required|string',
         'password' => 'nullable|min:6',
-        'foto' => 'nullable|image|mimes:png,jpg,jpeg|max:5096',
+        // 'foto' => 'nullable|image|mimes:png,jpg,jpeg|max:5096',
     ]);
 
-    // Ambil data member dan user
     $member = Member::findOrFail($id);
     $user = User::findOrFail($member->users_id);
 
-    // Update data user
     $user->name = $request->name;
     $user->email = $request->email;
     if ($request->password) {
@@ -58,21 +56,19 @@ public function edit(Request $request, $id)
     }
     $user->save();
 
-    // Upload foto jika ada
-    if ($request->hasFile('foto')) {
-        $image = $request->file('foto');
-        $fileName = time() . "-" . $user->id . "." . $image->getClientOriginalExtension();
-        $image->storeAs('member', $fileName);
-    } else {
-        $fileName = $member->foto; // gunakan foto lama
-    }
+    // if ($request->hasFile('foto')) {
+    //     $image = $request->file('foto');
+    //     $fileName = time() . "-" . $user->id . "." . $image->getClientOriginalExtension();
+    //     $image->storeAs('member', $fileName);
+    // } else {
+    //     $fileName = $member->foto;
+    // }
 
-    // Update data member
     $member->update([
         'name' => $request->name,
         'nohp' => $request->nohp,
         'address' => $request->address,
-        'foto' => $fileName,
+        // 'foto' => $fileName,
     ]);
 
     return redirect()->route('admin.member')->with('success', 'Member berhasil diupdate.');
@@ -94,19 +90,19 @@ public function edit(Request $request, $id)
             'password' => bcrypt($request->password)
         ]);
 
-        if($request->hasFile('foto')){
-            $image = $request->file('foto');
-            $fileName = time()."-".$user->id.".".$image->getClientOriginalExtension();
-            $image->storeAs('member',$fileName);
-        }else{
-            $fileName = "-";
-        }
+        // if($request->hasFile('foto')){
+        //     $image = $request->file('foto');
+        //     $fileName = time()."-".$user->id.".".$image->getClientOriginalExtension();
+        //     $image->storeAs('member',$fileName);
+        // }else{
+        //     $fileName = "-";
+        // }
 
         Member::create([
             'name' => $request->name,
             'nohp' => $request->nohp,
             'address' => $request->address,
-            'foto' => $fileName,
+            // 'foto' => $fileName,
             'users_id' => $user->id
         ]);
 
